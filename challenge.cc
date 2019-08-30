@@ -15,7 +15,7 @@ struct pos{
 };
 
 /*
- * LabelNeighbours Function: Performs an Iterative Depth First Search(DFS) Algorithm for Labelling
+ * LabelNeighbours Function: Performs an Iterative Depth First Search(DFS) Algorithm for Labeling
  * Neighbourhood Pixels, One Component at a time. 
  * @param board: 2D Binary Image/Matrix 
  * @param i: row location of pixel in the Image/Matrix
@@ -31,14 +31,14 @@ void LabelNeighbours(vector<vector<int>> &board, int i, int j, int label){
 
         dfs_stack.push({i,j}); //Push ForeGround(1) Component into Stack
 
-	/* Iterate Till Stack is Empty Signifying all Connected Components for the specific Pixel are Labelled*/
+	/* Iterate Till Stack is Empty Signifying all Connected Components for the specific Pixel are Labeled*/
         while( !dfs_stack.empty() ){
         
 		pos pixel_pos = dfs_stack.top(); //Get Location of ForeGround Pixel
         
 		dfs_stack.pop(); //Remove the Element(Location) from the Stack
 	
-		/*Find 4-Connected Neighbours of the specific pixel and Assign Label if Unlabelled*/
+		/*Find 4-Connected Neighbours of the specific pixel and Assign Label if Unlabeled*/
                 for(int k=0; k < coordinates.size() ; k++){
 	
 			/*Check For Boundary Conditions: Location of pixels should be in-range of (0,board.row-1) and (0,board.col-1)*/
@@ -60,7 +60,7 @@ void LabelNeighbours(vector<vector<int>> &board, int i, int j, int label){
 }
 
 /* 
- * ConnectedComponents Function: Performs Connected Component Labelling for the Binary Image/Matrix Inplace.
+ * ConnectedComponents Function: Performs Connected Component Labeling for the Binary Image/Matrix Inplace.
  * labels all the 1's connected according to the 4-Connected Neighbourhood rule (N,S,E,W) starting with label 2.
  * @param board: 2D Binary Image/Matrix
  * PRE CONDITION: board must be 2D and Binary Thresholded
